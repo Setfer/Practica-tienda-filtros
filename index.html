@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtABLxCnJPU8BPGQ4yhF-8xEcDlIQkZOKQAQ&s" alt="Logo" id="logo" />
+      <ul>
+        <li>Hombre</li>
+        <li>Mujer</li>
+        <li>Niños</li>
+        <li>ofertas</li>
+      </ul>
+    </header>
+    <main>
+      <img src="https://www.palco23.com/thumb/MTIwMHg2NzV4MXgxLjEuNTI=/files/2023/20_equipamiento/jd-sports/jd-sports-teinda-espana-980.jpg" alt="Cabecera-Main" id="cabecera-img" />
+      <div id="filtros">
+        <select id="marca-picker">
+          <option value="@fff">-</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Buscar producto" />
+        <input
+          type="number"
+          id="priceInput-min"
+          placeholder="Ingrese precio minimo"
+        />
+        <input
+          type="number"
+          id="priceInput-max"
+          placeholder="Ingrese precio maximo"
+        />
+        <button id="boton-buscar">Buscar</button>
+        <button id="boton-limpiar" >Limpiar</button>
+      </div>
+      <div id="productos"></div>
+    </main>
+    <footer>
+      <ul>
+        <li><h4>Compra con JD</h4></li>
+        <li>Guia de tallas</li>
+        <li>buscador de tallas</li>
+        <li>descuento de estudiantes</li>
+      </ul>
+      <ul>
+        <li><h4>Atencion al cliente</h4></li>
+        <li>Preguntas frecuentes</li>
+        <li>Envios y devoluciones</li>
+        <li>Seguimiento de envio</li>
+      </ul>
+      <ul>
+        <li><h4>Aviso Legal</h4></li>
+        <li>Termino y condiciones</li>
+        <li>Promociones y condiciones</li>
+        <li>Politica de privacidad</li>
+      </ul>
+    </footer>
+  </body>
+</html>
