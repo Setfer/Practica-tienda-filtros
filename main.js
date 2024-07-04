@@ -156,32 +156,33 @@ function buscarMarca(inputNombre, pickerInput) {
 }
 //Funcion para rango de precio
 
-function buscarPrecio(resultadosFiltrados, imputMax, imputMin){
-  return productos.filter((producto)=>{
-    const precioObjeto = producto.precio
-    if (precioObjeto <= imputMax &&  precioObjeto >= imputMin){
-      return resultadosFiltrados
-    }
-  })
+function buscarPrecio(resultadosFiltrados, inputMin, inputMax) {
+  const min = parseFloat(inputMin.value) || 0; // Valor por defecto 0 si está vacío
+  const max = parseFloat(inputMax.value) || Infinity; // Valor por defecto Infinity si está vacío
+  return resultadosFiltrados.filter((producto) => {
+    const precio = parseFloat(producto.precio); // Convertir precio a número
+    return precio >= min && precio <= max;
+  });
 }
 
 // Función principal para buscar productos
-document
-.getElementById('boton-buscar')
-.addEventListener('click', buscarNombre)
 
 function buscarNombre() {
   const inputNombre = document.getElementById('searchInput').value.toLowerCase();
   const pickerInput = document
     .getElementById('marca-picker')
     .value.toLowerCase();
-    const imputMax = document.getElementById("priceInput-max")
-    const imputMin = document.getElementById("priceInput-min")
+    const inputMax = document.getElementById("priceInput-max")
+    const inputMin = document.getElementById("priceInput-min")
 
   const resultadosFiltradosMarca = buscarMarca(inputNombre, pickerInput) ;
-  const resultadosFiltrados = buscarPrecio(resultadosFiltradosMarca, imputMin, imputMax)
+  const resultadosFiltrados = buscarPrecio(resultadosFiltradosMarca, inputMin, inputMax)
   displayResults(resultadosFiltrados);
 }
+
+document
+.getElementById('boton-buscar')
+.addEventListener('click', buscarNombre)
 
 //funcion para mostrar los resultados
 function displayResults(results) {
@@ -202,6 +203,35 @@ function displayResults(results) {
     productsContainer.appendChild(productoDiv)
   })
   }
-
-
 }
+
+// Función para limpiar los campos de entrada
+document.getElementById('boton-limpiar').addEventListener('click', limpiarCampos);
+
+function limpiarCampos() {
+  const productsContainer = document.getElementById('productos')
+  productsContainer.innerHTML = ''
+  document.getElementById('searchInput').value = '';
+  document.getElementById('marca-picker').selectedIndex = 0; // Selecciona la primera opción
+  document.getElementById('priceInput-max').value = '';
+  document.getElementById('priceInput-min').value = '';
+  displayAllProducts(); // Muestra todos los productos después de limpiar
+}
+// Funciones para abrir y cerrar el modal
+const modal = document.getElementById('filter-modal');
+const openModalBtn = document.getElementById('open-modal-btn');
+const closeModalBtn = document.querySelector('.close-btn');
+
+openModalBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+closeModalBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+});
