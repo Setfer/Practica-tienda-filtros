@@ -156,7 +156,14 @@ function buscarMarca(inputNombre, pickerInput) {
 }
 //Funcion para rango de precio
 
-
+function buscarPrecio(resultadosFiltrados, imputMax, imputMin){
+  return productos.filter((producto)=>{
+    const precioObjeto = producto.precio
+    if (precioObjeto <= imputMax &&  precioObjeto >= imputMin){
+      return resultadosFiltrados
+    }
+  })
+}
 
 // Función principal para buscar productos
 document
@@ -168,7 +175,11 @@ function buscarNombre() {
   const pickerInput = document
     .getElementById('marca-picker')
     .value.toLowerCase();
-  const resultadosFiltrados = buscarMarca(inputNombre, pickerInput);
+    const imputMax = document.getElementById("priceInput-max")
+    const imputMin = document.getElementById("priceInput-min")
+
+  const resultadosFiltradosMarca = buscarMarca(inputNombre, pickerInput) ;
+  const resultadosFiltrados = buscarPrecio(resultadosFiltradosMarca, imputMin, imputMax)
   displayResults(resultadosFiltrados);
 }
 
