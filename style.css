@@ -126,6 +126,36 @@ main {
 
 /* FILTROS */
 
+/* Boton mostrar filtros */
+#open-modal-btn {
+  background-color: #6aa8eb; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  cursor: pointer; /* Cursor en forma de mano */
+  display: inline-flex; /* Alineación en línea */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  font-size: 16px; /* Tamaño de la fuente */
+  transition: background-color 0.3s; /* Transición para el hover */
+}
+
+/* Estilo del botón al pasar el ratón */
+#open-modal-btn:hover {
+  background-color: #0056b3; /* Color de fondo cuando se pasa el ratón */
+}
+
+/* Crear una flecha hacia abajo */
+#open-modal-btn::after {
+  content: ''; /* Sin contenido de texto */
+  display: block; /* Para que sea un bloque */
+  width: 0; /* Ancho de 0 */
+  height: 0; /* Alto de 0 */
+  border-left: 5px solid transparent; /* Borde izquierdo transparente */
+  border-right: 5px solid transparent; /* Borde derecho transparente */
+  border-top: 5px solid white; /* Borde superior blanco */
+}
 
 
 /* PRODUCTO-MAIN */

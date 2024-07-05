@@ -255,19 +255,8 @@ function limpiarCampos() {
 // Funciones para abrir y cerrar el modal
 const modal = document.getElementById('filter-modal');
 const openModalBtn = document.getElementById('open-modal-btn');
-const closeModalBtn = document.querySelector('.close-btn');
-
-openModalBtn.addEventListener('click', () => {
-  modal.style.display = 'block';
-});
-
-closeModalBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-});
+openModalBtn.addEventListener('click', toggleModal);
+function toggleModal() {
+  modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
+}
 
