@@ -101,8 +101,9 @@ function displayAllProducts() {
     productoDiv.innerHTML = `
   <img src="${producto.img}" alt="${producto.nombre}" />
             <h2>${producto.nombre}</h2>
-            <p>${producto.precio} €</p>
+            <p>${producto.precio} €</p> 
             <p>${producto.marca}</p>
+            <button>Comprar</button>
             `
     punteroProducto.appendChild(productoDiv)
   }
@@ -218,6 +219,7 @@ function displayResults(results) {
               <h2>${product.nombre}</h2>
               <p>${product.precio} €</p>
               <p>${product.marca}</p>
+              <button>Comprar</button>
               `
       productsContainer.appendChild(productoDiv)
     })
@@ -231,6 +233,7 @@ function displayResults(results) {
             <h2>${product.nombre}</h2>
             <p>${product.precio} €</p>
             <p>${product.marca}</p>
+            <button>Comprar</button>
             `
     productsContainer.appendChild(productoDiv)
   })
