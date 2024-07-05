@@ -108,6 +108,25 @@ function displayAllProducts() {
   }
 }
 displayAllProducts()
+// Función para obtener un número entero aleatorio entre min (incluido) y max (excluido)
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+// Función para obtener n elementos aleatorios de un array
+function getRandomElements(arr, n) {
+  // Crear una copia del array para evitar modificar el original
+  const arrCopy = arr.slice();
+  const result = [];
+  
+  for (let i = 0; i < n; i++) {
+    const randomIndex = getRandomInt(0, arrCopy.length);
+    result.push(arrCopy[randomIndex]);
+    // Eliminar el elemento seleccionado para no repetirlo
+    arrCopy.splice(randomIndex, 1);
+  }
+
+  return result;
+}
 
 //funcion insertar elmentos en el picker
 const marcasEspeciales = new Set(['jordan', 'new balance'])
@@ -189,7 +208,20 @@ function displayResults(results) {
   const productsContainer = document.getElementById('productos')
   productsContainer.innerHTML = ''
   if (results.length === 0) {
-    productsContainer.innerHTML = '<p>No se encontraron productos.</p>'
+    productsContainer.innerHTML = '<p>No se encontraron productos.Le ofrecemos unas recomendaciones :</p>'
+    const objetosAleatorios = getRandomElements(productos, 3);
+    objetosAleatorios.forEach((product) => {
+      const productoDiv = document.createElement('div')
+      productoDiv.classList.add('producto')
+      productoDiv.innerHTML = `
+    <img src="${product.img}" alt="${product.nombre}" />
+              <h2>${product.nombre}</h2>
+              <p>${product.precio} €</p>
+              <p>${product.marca}</p>
+              `
+      productsContainer.appendChild(productoDiv)
+    })
+
   }else {
   results.forEach((product) => {
     const productoDiv = document.createElement('div')
@@ -235,3 +267,4 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
