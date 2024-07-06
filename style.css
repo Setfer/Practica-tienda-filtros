@@ -12,49 +12,10 @@
   margin: 0;
   padding: 0;
 }
+#menu{
+  display: none;
+}
 /* HEADER */
-/* header {
-  background-color: var(--background-color-2);
-  color: white;
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  align-items: center;
-}
-
-header > ul {
-  display: flex;
-}
-
-header > ul > li > a {
-  display: flex;
-  text-decoration: none;
-  color: inherit;
-}
-
-header > ul > li {
-  margin: 15px;
-}
-body{display: flex;
-flex-direction: column;}
-
-#logo{
-  height: 100px;
-  position: absolute;
-  left: 0px;
-}
-
-#cesta {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#cesta > img{
-  position: absolute;
-  right: 0px;
-  height: 70px;
-} */
 body {
   display: flex;
   flex-direction: column;
@@ -71,7 +32,8 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-header > #logo {
+#logo {
+  max-height: 100%;
   height: 80px;
   margin-left: 20px; 
 }
@@ -95,7 +57,7 @@ header > ul > li > a {
 }
 
 header > ul > li > a:hover {
-  color: #ffcc00; /* Cambiar color del texto al pasar el ratón */
+  color: #ffcc00;
 }
 
 #cesta {
@@ -111,6 +73,8 @@ header > ul > li > a:hover {
 #cesta > img:hover {
   transform: scale(1.1);
 }
+
+
 /* MAIN */
 main {
   display: flex;
@@ -126,8 +90,91 @@ main {
 
 /* FILTROS */
 
+/* Estilos para el modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+/* Estilos para el contenedor del modal */
+#filter-modal {
+  display: none;
+  justify-content: center;
+  position: relative;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px;
+}
+
+/* Estilos para el contenedor de filtros */
+#filtros {
+  width: 100%;
+
+}
+
+/* Título centrado */
+#filtros h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Contenedor para los inputs en fila */
+#filtros .input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Inputs en la primera fila */
+#filtros select,
+#filtros input[type="text"] {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Inputs de precios en la segunda fila */
+#filtros #priceInput-min,
+#filtros #priceInput-max {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Botones en fila */
+#filtros .button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilos para los botones */
+#filtros .button-group button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  flex: 1;
+}
+
 /* Boton mostrar filtros */
 #open-modal-btn {
+  
   background-color: #6aa8eb; /* Color de fondo */
   color: white; /* Color del texto */
   border: none; /* Sin borde */
@@ -140,8 +187,6 @@ main {
   font-size: 16px; /* Tamaño de la fuente */
   transition: background-color 0.3s; /* Transición para el hover */
 }
-
-/* Estilo del botón al pasar el ratón */
 #open-modal-btn:hover {
   background-color: #0056b3; /* Color de fondo cuando se pasa el ratón */
 }
@@ -168,6 +213,12 @@ main {
   margin-top: 10px;
 }
 
+#productos > p {
+  width: 100vw;
+  text-align: center;
+
+}
+
 .producto {
   text-align: center;
   height: auto;
@@ -179,6 +230,8 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   transition: transform 0.2s;
 }
+
+
 
 .producto:hover {
   transform: scale(1.05); 
@@ -198,6 +251,7 @@ main {
   font-weight: bold; 
 }
 
+
 .producto > p:first-of-type {
   font-size: 24px; 
   color: #e91e63; 
@@ -211,6 +265,19 @@ main {
   margin-bottom: 10px; 
   font-style: italic; 
 }
+.producto > button{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
 /* FOOTER */
 footer {
   display: flex;
@@ -233,17 +300,20 @@ footer > ul > li {
   margin: 10px 0; 
 }
 
-footer > ul > li > h4 {
+
+footer > ul > li > a {
+  font-size: 16px; 
+  color: inherit;
+  text-decoration: none;
+}
+
+footer > ul > li > a > h4 {
   font-size: 20px;
   margin-bottom: 10px;  
   padding-bottom: 5px; 
 }
 
-footer > ul > li {
-  font-size: 16px; 
-}
-
-footer > ul > li:hover {
+footer > ul > li > a:hover {
   color: #ffcc00;
   cursor: pointer; 
 }
@@ -251,3 +321,74 @@ footer > ul > li:hover {
 footer > ul > li:not(:first-child) {
   padding-left: 15px;
 }
+
+@media (max-width: 565px){
+
+  /* header */
+header {
+  height: 50px;
+}
+  header > ul{
+  display: none;
+}
+#menu {
+  display: block;
+}
+#menu > img {
+  max-height: 100%;
+  height: 40px; 
+  background-color: transparent;
+}
+
+#cesta {
+ order: 3;
+}
+/* MAIN */
+/* PRODUCTO */
+.producto{
+  width: 150px; 
+}
+
+.producto > h2 {
+  font-size: 16px; 
+}
+
+.producto > p:first-of-type {
+  font-size: 18px; 
+}
+
+.producto > p:nth-of-type(2) {
+  font-size: 14px; 
+}
+
+.producto > button {
+  padding: 8px 16px; 
+  font-size: 14px; 
+}
+
+/* footer */
+footer {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+footer > ul {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer > ul > li {
+  margin: 5px 0;
+}
+
+footer > ul > li > a {
+  font-size: 14px;
+}
+
+footer > ul > li > a > h4 {
+  font-size: 18px;
+}
+}
+

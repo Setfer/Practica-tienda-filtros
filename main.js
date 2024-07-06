@@ -259,4 +259,3 @@ openModalBtn.addEventListener('click', toggleModal);
 function toggleModal() {
   modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
 }
-

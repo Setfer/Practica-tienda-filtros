@@ -20,7 +20,10 @@
         <li><a href="#">Niños</a></li>
         <li><a href="#">ofertas</a></li>
       </ul>
+     
       <a href="#" id="cesta"><img src="https://cdn-icons-png.flaticon.com/128/4903/4903482.png" alt="cesta"></a>
+      <button id="menu"><img src="https://cdn-icons-png.flaticon.com/128/2976/2976215.png" alt="MenuMovil"></button>
+    
     </header>
     <main>
       <img
@@ -31,45 +34,43 @@
       <button id="open-modal-btn"></button>
       <div id="filter-modal" class="modal">
         <div id="filtros">
-          <h2>Filtrar Productos</h2>
-          <select id="marca-picker">
-            <option value="@fff">-</option>
-          </select>
-          <input type="text" id="searchInput" placeholder="Buscar producto" />
-          <input
-            type="number"
-            id="priceInput-min"
-            placeholder="Ingrese precio minimo"
-          />
-          <input
-            type="number"
-            id="priceInput-max"
-            placeholder="Ingrese precio maximo"
-          />
-          <button id="boton-buscar">Buscar</button>
-          <button id="boton-limpiar">Limpiar</button>
+            <h2>Filtrar Productos</h2>
+            <div class="input-row">
+                <select id="marca-picker">
+                    <option value="@fff">-</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Buscar producto" />
+            </div>
+            <div class="input-row">
+                <input type="number" id="priceInput-min" placeholder="Ingrese precio mínimo" />
+                <input type="number" id="priceInput-max" placeholder="Ingrese precio máximo" />
+            </div>
+            <div class="button-group">
+                <button id="boton-buscar">Buscar</button>
+                <button id="boton-limpiar">Limpiar</button>
+            </div>
         </div>
-      </div>
+    </div>
       <div id="productos"></div>
     </main>
     <footer>
       <ul>
-        <li><h4>Compra con JD</h4></li>
-        <li>Guia de tallas</li>
-        <li>buscador de tallas</li>
-        <li>descuento de estudiantes</li>
+        <li><a href="#"><h4>Compra con JD</h4></a></li>
+        <li><a href="#">Guia de tallas</a></li>
+        <li><a href="#">buscador de tallas</a></li>
+        <li><a href="#">descuento de estudiantes</a></li>
       </ul>
       <ul>
-        <li><h4>Atencion al cliente</h4></li>
-        <li>Preguntas frecuentes</li>
-        <li>Envios y devoluciones</li>
-        <li>Seguimiento de envio</li>
+        <li><a href="#"><h4>Atencion al cliente</h4></a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Envios y devoluciones</a></li>
+        <li><a href="#">Seguimiento de envio</a></li>
       </ul>
       <ul>
-        <li><h4>Aviso Legal</h4></li>
-        <li>Termino y condiciones</li>
-        <li>Promociones y condiciones</li>
-        <li>Politica de privacidad</li>
+        <li> <a href="#"><h4>Aviso Legal</h4></a></li>
+        <li><a href="#">Termino y condiciones</a></li>
+        <li><a href="#">Promociones y condiciones</a></li>
+        <li><a href="#">Politica de privacidad</a></li>
       </ul>
     </footer>
   </body>
