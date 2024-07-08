@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
 }
-#menu{
+#menu-btn{
   display: none;
 }
 /* HEADER */
@@ -175,20 +175,20 @@ main {
 /* Boton mostrar filtros */
 #open-modal-btn {
   
-  background-color: #6aa8eb; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 15px; /* Espaciado interno */
-  cursor: pointer; /* Cursor en forma de mano */
-  display: inline-flex; /* Alineación en línea */
-  align-items: center; /* Centra el contenido verticalmente */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  font-size: 16px; /* Tamaño de la fuente */
-  transition: background-color 0.3s; /* Transición para el hover */
+  background-color: #6aa8eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px; 
+  cursor: pointer; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 16px;
+  transition: background-color 0.3s; 
 }
 #open-modal-btn:hover {
-  background-color: #0056b3; /* Color de fondo cuando se pasa el ratón */
+  background-color: #0056b3; 
 }
 
 /* Crear una flecha hacia abajo */
@@ -199,7 +199,7 @@ main {
   height: 0; /* Alto de 0 */
   border-left: 5px solid transparent; /* Borde izquierdo transparente */
   border-right: 5px solid transparent; /* Borde derecho transparente */
-  border-top: 5px solid white; /* Borde superior blanco */
+  border-top: 5px solid rgb(255, 255, 255); /* Borde superior blanco */
 }
 
 
@@ -328,18 +328,18 @@ footer > ul > li:not(:first-child) {
 header {
   height: 50px;
 }
-  header > ul{
-  display: none;
-}
-#menu {
+
+#menu-btn {
   display: block;
 }
-#menu > img {
+#menu-btn > img {
   max-height: 100%;
   height: 40px; 
   background-color: transparent;
 }
-
+#categorias{
+  display: none;
+}
 #cesta {
  order: 3;
 }
@@ -390,5 +390,7 @@ footer > ul > li > a {
 footer > ul > li > a > h4 {
   font-size: 18px;
 }
+
+
 }
 

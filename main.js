@@ -250,7 +250,7 @@ function limpiarCampos() {
   document.getElementById('marca-picker').selectedIndex = 0; // Selecciona la primera opción
   document.getElementById('priceInput-max').value = '';
   document.getElementById('priceInput-min').value = '';
-  displayAllProducts(); // Muestra todos los productos después de limpiar
+  displayAllProducts();
 }
 // Funciones para abrir y cerrar el modal
 const modal = document.getElementById('filter-modal');
